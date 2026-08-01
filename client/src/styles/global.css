@@ -1,0 +1,326 @@
+/* ============================= */
+/* Global Utility Classes */
+/* ============================= */
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+/* ============================= */
+/* Cards */
+/* ============================= */
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ============================= */
+/* Buttons */
+/* ============================= */
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #b91c1c;
+}
+
+.btn-secondary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #1d4ed8;
+}
+
+/* ============================= */
+/* Emergency Colors */
+/* ============================= */
+
+.emergency {
+  color: #dc2626;
+}
+
+.success {
+  color: #16a34a;
+}
+
+.warning {
+  color: #f59e0b;
+}
+
+.info {
+  color: #2563eb;
+}
+
+/* ============================= */
+/* Badge */
+/* ============================= */
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.badge-red {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.badge-green {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.badge-blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+/* ============================= */
+/* Fade Animation */
+/* ============================= */
+
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================= */
+/* Floating Animation */
+/* ============================= */
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ============================= */
+/* Pulse Animation */
+/* ============================= */
+
+.pulse-red {
+  animation: pulseRed 1.5s infinite;
+}
+
+@keyframes pulseRed {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 15px rgba(220, 38, 38, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+  }
+}
+
+/* ============================= */
+/* Loader */
+/* ============================= */
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #e5e7eb;
+  border-top: 5px solid #dc2626;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================= */
+/* Responsive */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.re{
+  margin-block: 20px;
+}
+
+.hh{
+  margin-top: 15px;
+}
+
+.hh2{
+  margin-block: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hospital-home{
+  margin-top: 20px;
+}
+
+.abd{
+  margin-bottom: 10px;
+}
+
+.nih{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.SOS{
+  margin-left: 20px;
+  margin-bottom: 20px; 
+}
+
+.myh{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tr{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.dashboard-stats{
+  margin-bottom: 10px;
+}
+
+.search-hos{
+  margin-block: 10px;
+}
+
+.hos-header{
+  margin-top: 5px;
+}
+
+.input-blood{
+  margin-block: 10px;
+}
+
+.profile-logout{
+  margin-top: 20px;
+  margin-left: 370px;
+  padding: 5px;
+}
+
+.profile-detail{
+  margin-inline: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-container{
+  padding: 40px;
+}
+
+.navbar-logout{
+  padding: 20px;
+}
+
+.AI-Statement{
+  margin-block: 10px;
+}
+
+.AI-header{
+  margin-block: 10px;
+}
+
+.AI-input{
+  margin-bottom: 10px;
+}
+
+.paperPlane{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.AI-input{
+  margin-inline: 8px;
+}
