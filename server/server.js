@@ -32,9 +32,14 @@ const server = http.createServer(app);
    Socket.IO Configuration
 ===================================== */
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://lifeline-ai-1.vercel.app"
+];
+
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: allowedOrigins,
     credentials: true,
   },
 });
