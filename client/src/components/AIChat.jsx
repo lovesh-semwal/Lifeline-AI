@@ -36,7 +36,7 @@ const AIChat = () => {
     ]);
 
     const res = await axios.post(
-      "http://localhost:5000/api/ai/chat",
+      `${API_URL}/api/ai/chat`,
       {
         message: question,
       }

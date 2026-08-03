@@ -70,6 +70,8 @@ const ReportEmergency = () => {
         data.append("image", formData.image);
       }
 
+      
+
       const response = await api.post("/emergency", data, {
         headers: {
           "Content-Type": "multipart/form-data",

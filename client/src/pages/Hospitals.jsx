@@ -15,11 +15,11 @@ const [userLocation, setUserLocation] = useState(null);
     fetchHospitals();
   }, []);
 
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+
   const fetchHospitals = async () => {
     try {
-      const { data } = await axios.get(
-        "http://localhost:5000/api/hospitals/real",
-      );
+      const { data } = await axios.get(`${API_URL}/api/hospitals/real`);
 
       if (data.success) {
         setHospitals(data.hospitals);

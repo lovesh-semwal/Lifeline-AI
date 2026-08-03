@@ -14,12 +14,12 @@ const BloodDonors = () => {
 
   const navigate = useNavigate();
 
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+
   useEffect(() => {
     const fetchDonors = async () => {
       try {
-        const { data } = await axios.get(
-          "http://localhost:5000/api/donors"
-        );
+        const { data } = await axios.get(`${API_URL}/api/hospitals/real`);
         console.log(data)
 
         if (data.success) {

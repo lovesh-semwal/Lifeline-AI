@@ -10,8 +10,10 @@ const MyEmergencies = () => {
     try {
       const token = localStorage.getItem("token");
 
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+
       const { data } = await axios.get(
-        "http://localhost:5000/api/emergency/my",
+        `${API_URL}/api/emergency/my`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

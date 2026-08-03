@@ -90,8 +90,10 @@ const RegisterDonor = () => {
       delete donorData.latitude;
       delete donorData.longitude;
 
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+
       const response = await axios.post(
-        "http://localhost:5000/api/donors",
+        `${API_URL}/api/donorss`,
         donorData,
         {
           headers: {
