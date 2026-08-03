@@ -19,7 +19,7 @@ const BloodDonors = () => {
   useEffect(() => {
     const fetchDonors = async () => {
       try {
-        const { data } = await axios.get(`${API_URL}/api/hospitals/real`);
+        const { data } = await axios.get(`${API_URL}/api/donors`);
         console.log(data)
 
         if (data.success) {

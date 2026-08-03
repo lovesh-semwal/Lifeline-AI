@@ -93,7 +93,7 @@ const RegisterDonor = () => {
       const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
       const response = await axios.post(
-        `${API_URL}/api/donorss`,
+        `${API_URL}/api/donors`,
         donorData,
         {
           headers: {
