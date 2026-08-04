@@ -29,7 +29,7 @@ const Home = () => {
     const fetchDonors = async () => {
       try {
         const data = await getDonors();
-        setDonors(data.donors);
+        setDonors(Array.isArray(data?.donors) ? data.donors : []);
       } catch (error) {
         console.error("Failed to fetch donors:", error);
       } finally {
@@ -47,7 +47,7 @@ const Home = () => {
       const data = await getHospitals();
 
       if (data && Array.isArray(data.hospitals)) {
-        setHospitals(data.hospitals.slice(0, 3));
+        setHospitals(Array.isArray(data?.hospitals) ? data.hospitals.slice(0, 3) : []);
       } else {
         setHospitals([]); // fallback to empty array
       }
@@ -65,7 +65,8 @@ const Home = () => {
     const fetchEmergencies = async () => {
       try {
         const data = await getRecentEmergencies();
-        setEmergencies(data);
+        setEmergencies(Array.isArray(data?.emergencies) ? data.emergencies : 
+               Array.isArray(data) ? data : []);
       } catch (error) {
         console.error("Failed to fetch emergencies:", error);
       } finally {
