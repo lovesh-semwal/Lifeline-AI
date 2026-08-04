@@ -22,12 +22,15 @@ const BloodDonors = () => {
         const { data } = await axios.get(`${API_URL}/api/donors`);
         console.log(data)
 
-        if (data.success && Array.isArray(data.donors)) {
-          console.log(data.donors);
+        if (Array.isArray(data?.donors)) {
   setDonorData(data.donors);
+} else if (Array.isArray(data)) {
+  // In case backend returns just an array
+  setDonorData(data);
 } else {
-  setDonorData([]); // fallback to empty array
+  setDonorData([]);
 }
+
 
       } catch (error) {
         console.error("Error fetching donors:", error);

@@ -20,8 +20,14 @@ const MyEmergencies = () => {
           },
         },
       );
-
-      setEmergencies(Array.isArray(data?.emergencies) ? data.emergencies : []);
+// Handle both possible shapes: { emergencies: [...] } or just [...]
+if (Array.isArray(data?.emergencies)) {
+  setEmergencies(data.emergencies);
+} else if (Array.isArray(data)) {
+  setEmergencies(data);
+} else {
+  setEmergencies([]);
+}
 
     } catch (error) {
       console.log(error);
