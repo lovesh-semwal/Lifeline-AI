@@ -22,10 +22,13 @@ const BloodDonors = () => {
         const { data } = await axios.get(`${API_URL}/api/donors`);
         console.log(data)
 
-        if (data.success) {
-          console.log(data.donors)
-          setDonorData(data.donors);
-        }
+        if (data.success && Array.isArray(data.donors)) {
+          console.log(data.donors);
+  setDonorData(data.donors);
+} else {
+  setDonorData([]); // fallback to empty array
+}
+
       } catch (error) {
         console.error("Error fetching donors:", error);
       } finally {
@@ -36,19 +39,22 @@ const BloodDonors = () => {
     fetchDonors();
   }, []);
 
-  const filteredDonors = donorData.filter((donor) => {
-  const name = donor.fullName || donor.name || "";
-  const city = donor.city || donor.location || "";
+  const filteredDonors = Array.isArray(donorData)
+  ? donorData.filter((donor) => {
+      const name = donor.fullName || donor.name || "";
+      const city = donor.city || donor.location || "";
 
-  const matchesSearch =
-    name.toLowerCase().includes(search.toLowerCase()) ||
-    city.toLowerCase().includes(search.toLowerCase());
+      const matchesSearch =
+        name.toLowerCase().includes(search.toLowerCase()) ||
+        city.toLowerCase().includes(search.toLowerCase());
 
-  const matchesBloodGroup =
-    bloodGroup === "" || donor.bloodGroup === bloodGroup;
+      const matchesBloodGroup =
+        bloodGroup === "" || donor.bloodGroup === bloodGroup;
 
-  return matchesSearch && matchesBloodGroup;
-});
+      return matchesSearch && matchesBloodGroup;
+    })
+  : [];
+
 
   return (
     <div className="min-h-screen bg-red-50 py-16"> {/* Increased vertical padding */}

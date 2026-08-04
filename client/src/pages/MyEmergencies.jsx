@@ -21,7 +21,8 @@ const MyEmergencies = () => {
         },
       );
 
-      setEmergencies(data.emergencies);
+      setEmergencies(Array.isArray(data?.emergencies) ? data.emergencies : []);
+
     } catch (error) {
       console.log(error);
 

@@ -46,15 +46,20 @@ const Home = () => {
     try {
       const data = await getHospitals();
 
-      // Show only first 3 hospitals
-      setHospitals(data.hospitals.slice(0, 3));
+      if (data && Array.isArray(data.hospitals)) {
+        setHospitals(data.hospitals.slice(0, 3));
+      } else {
+        setHospitals([]); // fallback to empty array
+      }
     } catch (error) {
       console.error("Failed to fetch hospitals:", error);
+      setHospitals([]); // prevent crash
     }
   };
 
   fetchHospitals();
 }, []);
+
 
   useEffect(() => {
     const fetchEmergencies = async () => {
