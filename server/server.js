@@ -34,7 +34,7 @@ const server = http.createServer(app);
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://lifeline-ai-1.vercel.app"
+  "https://lifeline-ai-by-lovesh.vercel.app"
 ];
 
 const io = new Server(server, {

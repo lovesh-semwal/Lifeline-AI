@@ -35,6 +35,9 @@ const AIChat = () => {
       },
     ]);
 
+
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+
     const res = await axios.post(
       `${API_URL}/api/ai/chat`,
       {
