@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import API from "../services/api";   // ✅ use shared API instance
 
 const RegisterDonor = () => {
   const [formData, setFormData] = useState({
@@ -26,7 +26,6 @@ const RegisterDonor = () => {
   // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -47,11 +46,10 @@ const RegisterDonor = () => {
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
         }));
-
         setMessage("Location detected successfully.");
         setError("");
       },
-      (error) => {
+      () => {
         setError("Unable to get your location. Please allow location access.");
       }
     );
@@ -76,10 +74,8 @@ const RegisterDonor = () => {
 
       const donorData = {
         ...formData,
-
         age: Number(formData.age),
         weight: Number(formData.weight),
-
         location: {
           latitude: Number(formData.latitude),
           longitude: Number(formData.longitude),
@@ -90,22 +86,16 @@ const RegisterDonor = () => {
       delete donorData.latitude;
       delete donorData.longitude;
 
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
-
-      const response = await axios.post(
-        `${API_URL}/api/donors`,
-        donorData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      // ✅ Use API instance instead of axios + localhost
+      const response = await API.post("/donors", donorData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
 
       if (response.data.success) {
         setMessage("Blood donor registered successfully!");
-
         setFormData({
           fullName: "",
           email: "",
@@ -125,7 +115,6 @@ const RegisterDonor = () => {
       }
     } catch (error) {
       console.log(error);
-
       setError(
         error.response?.data?.message ||
           "Something went wrong while registering."

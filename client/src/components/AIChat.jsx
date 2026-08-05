@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import API from "../services/api";   // ✅ use shared API instance
 import { FaRobot, FaUser, FaPaperPlane } from "react-icons/fa";
 
 const AIChat = () => {
@@ -13,67 +13,54 @@ const AIChat = () => {
   const [input, setInput] = useState("");
 
   const sendMessage = async () => {
-  if (!input.trim()) return;
+    if (!input.trim()) return;
 
-  const userMessage = {
-    sender: "user",
-    text: input,
+    const userMessage = {
+      sender: "user",
+      text: input,
+    };
+
+    setMessages((prev) => [...prev, userMessage]);
+
+    const question = input;
+    setInput("");
+
+    try {
+      // Show loading message
+      setMessages((prev) => [
+        ...prev,
+        {
+          sender: "bot",
+          text: "Thinking...",
+        },
+      ]);
+
+      // ✅ Use API instance instead of axios + localhost
+      const res = await API.post("/ai/chat", { message: question });
+
+      const aiReply = res.data.response;
+
+      setMessages((prev) => {
+        const updated = [...prev];
+        // Replace Thinking...
+        updated[updated.length - 1] = {
+          sender: "bot",
+          text: aiReply,
+        };
+        return updated;
+      });
+    } catch (error) {
+      setMessages((prev) => {
+        const updated = [...prev];
+        updated[updated.length - 1] = {
+          sender: "bot",
+          text: "Sorry, I couldn't connect to the AI server.",
+        };
+        return updated;
+      });
+      console.error(error);
+    }
   };
-
-  setMessages((prev) => [...prev, userMessage]);
-
-  const question = input;
-  setInput("");
-
-  try {
-    // Show loading message
-    setMessages((prev) => [
-      ...prev,
-      {
-        sender: "bot",
-        text: "Thinking...",
-      },
-    ]);
-
-
-    const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
-
-    const res = await axios.post(
-      `${API_URL}/api/ai/chat`,
-      {
-        message: question,
-      }
-    );
-
-    const aiReply = res.data.response;
-
-    setMessages((prev) => {
-      const updated = [...prev];
-
-      // Replace Thinking...
-      updated[updated.length - 1] = {
-        sender: "bot",
-        text: aiReply,
-      };
-
-      return updated;
-    });
-
-  } catch (error) {
-    setMessages((prev) => {
-      const updated = [...prev];
-
-      updated[updated.length - 1] = {
-        sender: "bot",
-        text: "Sorry, I couldn't connect to the AI server.",
-      };
-
-      return updated;
-    });
-
-    console.error(error);
-  }
-};
 
   
 

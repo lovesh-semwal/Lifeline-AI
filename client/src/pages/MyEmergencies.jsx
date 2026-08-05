@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import API from "../services/api";   // ✅ use shared API instance
 import { toast } from "react-toastify";
 
 const MyEmergencies = () => {
@@ -10,30 +10,24 @@ const MyEmergencies = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
-
-      const { data } = await axios.get(
-        `${API_URL}/api/emergency/my`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+      const { data } = await API.get("/emergency/my", {
+        headers: {
+          Authorization: `Bearer ${token}`,
         },
-      );
-// Handle both possible shapes: { emergencies: [...] } or just [...]
-if (Array.isArray(data?.emergencies)) {
-  setEmergencies(data.emergencies);
-} else if (Array.isArray(data)) {
-  setEmergencies(data);
-} else {
-  setEmergencies([]);
-}
+      });
 
+      // Handle both possible shapes: { emergencies: [...] } or just [...]
+      if (Array.isArray(data?.emergencies)) {
+        setEmergencies(data.emergencies);
+      } else if (Array.isArray(data)) {
+        setEmergencies(data);
+      } else {
+        setEmergencies([]);
+      }
     } catch (error) {
       console.log(error);
-
       toast.error(
-        error.response?.data?.message || "Failed to fetch emergencies",
+        error.response?.data?.message || "Failed to fetch emergencies"
       );
     } finally {
       setLoading(false);

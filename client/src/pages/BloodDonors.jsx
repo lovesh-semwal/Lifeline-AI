@@ -1,37 +1,31 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import API from "../services/api";   // ✅ use shared API instance
 import BloodDonorCard from "../components/BloodDonorCard";
 import donorImage from "../assets/images/profile.png";
 import { useNavigate } from "react-router-dom";
 
-
 const BloodDonors = () => {
   const [search, setSearch] = useState("");
   const [bloodGroup, setBloodGroup] = useState("");
-
   const [donorData, setDonorData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
-
   useEffect(() => {
     const fetchDonors = async () => {
       try {
-        const { data } = await axios.get(`${API_URL}/api/donors`);
-        console.log(data)
+        const { data } = await API.get("/donors"); // ✅ no localhost fallback
+        console.log(data);
 
         if (Array.isArray(data?.donors)) {
-  setDonorData(data.donors);
-} else if (Array.isArray(data)) {
-  // In case backend returns just an array
-  setDonorData(data);
-} else {
-  setDonorData([]);
-}
-
-
+          setDonorData(data.donors);
+        } else if (Array.isArray(data)) {
+          // In case backend returns just an array
+          setDonorData(data);
+        } else {
+          setDonorData([]);
+        }
       } catch (error) {
         console.error("Error fetching donors:", error);
       } finally {
@@ -43,20 +37,20 @@ const BloodDonors = () => {
   }, []);
 
   const filteredDonors = Array.isArray(donorData)
-  ? donorData.filter((donor) => {
-      const name = donor.fullName || donor.name || "";
-      const city = donor.city || donor.location || "";
+    ? donorData.filter((donor) => {
+        const name = donor.fullName || donor.name || "";
+        const city = donor.city || donor.location || "";
 
-      const matchesSearch =
-        name.toLowerCase().includes(search.toLowerCase()) ||
-        city.toLowerCase().includes(search.toLowerCase());
+        const matchesSearch =
+          name.toLowerCase().includes(search.toLowerCase()) ||
+          city.toLowerCase().includes(search.toLowerCase());
 
-      const matchesBloodGroup =
-        bloodGroup === "" || donor.bloodGroup === bloodGroup;
+        const matchesBloodGroup =
+          bloodGroup === "" || donor.bloodGroup === bloodGroup;
 
-      return matchesSearch && matchesBloodGroup;
-    })
-  : [];
+        return matchesSearch && matchesBloodGroup;
+      })
+    : [];
 
 
   return (
