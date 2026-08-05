@@ -1,6 +1,5 @@
-import api from "../../services/api";
+import API from "../../services/api";   // ✅ use shared API instance
 import { useEffect, useMemo, useState } from "react";
-import axios from "axios";
 import {
   Search,
   Eye,
@@ -16,10 +15,8 @@ const EmergencyList = () => {
   const [selectedEmergency, setSelectedEmergency] = useState(null);
   const [hospitals, setHospitals] = useState([]);
   const [selectedHospital, setSelectedHospital] = useState("");
-
   const [emergencies, setEmergencies] = useState([]);
   const [loading, setLoading] = useState(true);
-
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("All");
 
@@ -32,13 +29,9 @@ const EmergencyList = () => {
   const fetchEmergencies = async () => {
     try {
       setLoading(true);
-
-      const res = await axios.get("http://localhost:5000/api/emergency", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+      const res = await API.get("/emergency", {
+        headers: { Authorization: `Bearer ${token}` },
       });
-
       setEmergencies(res.data.emergencies);
     } catch (error) {
       console.log(error);
@@ -50,8 +43,9 @@ const EmergencyList = () => {
 
   const fetchHospitals = async () => {
     try {
-      const res = await api.get("/hospitals");
-
+      const res = await API.get("/hospitals", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       setHospitals(res.data.hospitals);
     } catch (error) {
       console.log(error);
@@ -60,17 +54,30 @@ const EmergencyList = () => {
 
   const assignHospital = async () => {
     try {
-      await api.put(`/emergency/${selectedEmergency._id}/assign`, {
+      await API.put(`/emergency/${selectedEmergency._id}/assign`, {
         hospitalId: selectedHospital,
+      }, {
+        headers: { Authorization: `Bearer ${token}` },
       });
 
       alert("Hospital Assigned Successfully");
-
       setShowAssignModal(false);
-
       fetchEmergencies();
     } catch (error) {
       console.log(error);
+    }
+  };
+
+  const deleteEmergency = async (id) => {
+    if (!window.confirm("Delete this emergency?")) return;
+    try {
+      await API.delete(`/emergency/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      fetchEmergencies();
+    } catch (error) {
+      console.log(error);
+      alert("Delete failed");
     }
   };
 
@@ -87,56 +94,6 @@ const EmergencyList = () => {
       return matchesSearch && matchesStatus;
     });
   }, [emergencies, search, statusFilter]);
-
-  const total = emergencies.length;
-
-  const pending = emergencies.filter(
-    (item) => item.status === "Pending",
-  ).length;
-
-  const accepted = emergencies.filter(
-    (item) => item.status === "Accepted",
-  ).length;
-
-  const completed = emergencies.filter(
-    (item) => item.status === "Completed",
-  ).length;
-
-  const getStatusColor = (status) => {
-    switch (status) {
-      case "Pending":
-        return "bg-yellow-100 text-yellow-700";
-
-      case "Accepted":
-        return "bg-blue-100 text-blue-700";
-
-      case "Completed":
-        return "bg-green-100 text-green-700";
-
-      case "Cancelled":
-        return "bg-red-100 text-red-700";
-
-      default:
-        return "bg-gray-100 text-gray-700";
-    }
-  };
-
-  const deleteEmergency = async (id) => {
-    if (!window.confirm("Delete this emergency?")) return;
-
-    try {
-      await axios.delete(`http://localhost:5000/api/emergency/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      fetchEmergencies();
-    } catch (error) {
-      console.log(error);
-      alert("Delete failed");
-    }
-  };
 
   if (loading) {
     return (

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import API from "../services/api";   // ✅ use shared API instance
 import { useNavigate } from "react-router-dom";
 import { FaAmbulance, FaLocationArrow } from "react-icons/fa";
 import { MdEmergency } from "react-icons/md";
@@ -7,7 +7,6 @@ import { MdEmergency } from "react-icons/md";
 const SOSButton = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
-
   const navigate = useNavigate();
 
   const handleSOS = () => {
@@ -28,8 +27,9 @@ const SOSButton = () => {
         try {
           const token = localStorage.getItem("token");
 
-          const response = await axios.post(
-            "http://localhost:5000/api/emergency",
+          // ✅ Use API instance instead of axios + localhost
+          const response = await API.post(
+            "/emergency",
             {
               patientName: "Emergency User",
               emergencyType: "Medical Emergency",
@@ -49,7 +49,6 @@ const SOSButton = () => {
           );
 
           console.log("Emergency Created:", response.data);
-
           setMessage("🚑 SOS Emergency Created Successfully!");
 
           // Go to My Emergencies page after creating emergency
@@ -58,10 +57,8 @@ const SOSButton = () => {
           }, 1000);
         } catch (error) {
           console.error("SOS Error:", error.response?.data || error);
-
           setMessage(
-            error.response?.data?.message ||
-              "Failed to create emergency"
+            error.response?.data?.message || "Failed to create emergency"
           );
         } finally {
           setLoading(false);
@@ -69,7 +66,6 @@ const SOSButton = () => {
       },
       (error) => {
         setLoading(false);
-
         if (error.code === error.PERMISSION_DENIED) {
           setMessage("Location permission denied.");
         } else if (error.code === error.POSITION_UNAVAILABLE) {
