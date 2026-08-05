@@ -98,11 +98,26 @@ router.put(
   updateEmergencyStatus
 );
 
-router.delete(
-  "/:id",
-  authMiddleware,
-  adminMiddleware,
-  deleteEmergency
-);
+router.delete("/emergency/:id", authMiddleware, async (req, res) => {
+  try {
+    const emergency = await Emergency.findById(req.params.id);
+
+    if (!emergency) {
+      return res.status(404).json({ success: false, message: "Emergency not found" });
+    }
+
+    // Allow if admin OR creator of the emergency
+    if (req.user.role === "admin" || emergency.user.toString() === req.user._id.toString()) {
+      await emergency.deleteOne();
+      return res.json({ success: true, message: "Emergency deleted successfully" });
+    }
+
+    return res.status(403).json({ success: false, message: "Access denied" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+});
+
 
 export default router;
