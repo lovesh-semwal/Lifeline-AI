@@ -143,6 +143,10 @@ const Navbar = () => {
               Report Emergency
             </NavLink>
 
+            <NavLink to="/my-emergencies" onClick={() => setMenuOpen(false)}>
+              My-Emergencies
+            </NavLink>
+
             <NavLink to="/hospitals" onClick={() => setMenuOpen(false)}>
               Hospitals
             </NavLink>
