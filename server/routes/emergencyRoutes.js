@@ -98,7 +98,8 @@ router.put(
   updateEmergencyStatus
 );
 
-router.delete("/emergency/:id", authMiddleware, async (req, res) => {
+// DELETE /api/emergency/:id
+router.delete("/:id", authMiddleware, async (req, res) => {
   try {
     const emergency = await Emergency.findById(req.params.id);
 
@@ -118,6 +119,7 @@ router.delete("/emergency/:id", authMiddleware, async (req, res) => {
     res.status(500).json({ success: false, message: "Server error" });
   }
 });
+
 
 
 export default router;
