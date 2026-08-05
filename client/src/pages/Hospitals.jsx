@@ -1,26 +1,21 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import API from "../api"; // ✅ use your shared axios instance
 import HospitalCard from "../components/HospitalCard";
 import hospitalImage from "../assets/images/hospital.png";
-
 
 const Hospitals = () => {
   const [search, setSearch] = useState("");
   const [hospitals, setHospitals] = useState([]);
   const [loading, setLoading] = useState(true);
-
-const [userLocation, setUserLocation] = useState(null);
+  const [userLocation, setUserLocation] = useState(null);
 
   useEffect(() => {
     fetchHospitals();
   }, []);
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
-
   const fetchHospitals = async () => {
     try {
-      const { data } = await axios.get(`${API_URL}/api/hospitals/real`);
-
+      const { data } = await API.get("/hospitals/real"); // ✅ no localhost fallback
       if (data.success) {
         setHospitals(data.hospitals);
       }
@@ -32,41 +27,35 @@ const [userLocation, setUserLocation] = useState(null);
   };
 
   const calculateDistance = (lat1, lon1, lat2, lon2) => {
-  const R = 6371;
-
-  const dLat = (lat2 - lat1) * Math.PI / 180;
-  const dLon = (lon2 - lon1) * Math.PI / 180;
-
-  const a =
-    Math.sin(dLat / 2) ** 2 +
-    Math.cos(lat1 * Math.PI / 180) *
-      Math.cos(lat2 * Math.PI / 180) *
-      Math.sin(dLon / 2) ** 2;
-
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-  return (R * c).toFixed(2);
-};
+    const R = 6371;
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(lat1 * Math.PI / 180) *
+        Math.cos(lat2 * Math.PI / 180) *
+        Math.sin(dLon / 2) ** 2;
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return (R * c).toFixed(2);
+  };
 
   useEffect(() => {
-  navigator.geolocation.getCurrentPosition(
-    (position) => {
-      setUserLocation({
-        lat: position.coords.latitude,
-        lon: position.coords.longitude,
-      });
-    },
-    (error) => {
-      console.log(error);
-    }
-  );
-}, []);
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setUserLocation({
+          lat: position.coords.latitude,
+          lon: position.coords.longitude,
+        });
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }, []);
 
   const filteredHospitals = hospitals.filter((hospital) => {
     const name = hospital.displayName?.text || hospital.name || "";
-
     const address = hospital.formattedAddress || hospital.vicinity || "";
-
     return (
       name.toLowerCase().includes(search.toLowerCase()) ||
       address.toLowerCase().includes(search.toLowerCase())
