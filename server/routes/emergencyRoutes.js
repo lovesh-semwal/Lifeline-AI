@@ -102,6 +102,11 @@ router.put(
 // DELETE /api/emergency/:id
 router.delete("/:id", authMiddleware, async (req, res) => {
   try {
+    // Validate ID
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+      return res.status(400).json({ success: false, message: "Invalid ID" });
+    }
+
     const emergency = await Emergency.findById(req.params.id);
 
     if (!emergency) {
@@ -109,7 +114,10 @@ router.delete("/:id", authMiddleware, async (req, res) => {
     }
 
     // Allow if admin OR creator of the emergency
-    if (req.user.role === "admin" || emergency.user.toString() === req.user._id.toString()) {
+    if (
+      req.user.role === "admin" ||
+      (emergency.user && emergency.user.toString() === req.user._id.toString())
+    ) {
       await emergency.deleteOne();
       return res.json({ success: true, message: "Emergency deleted successfully" });
     }
