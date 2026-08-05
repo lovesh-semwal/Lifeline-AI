@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import API from "../api"; // ✅ use your shared axios instance
+import API from "../services/api"; // ✅ use your shared axios instance
 import HospitalCard from "../components/HospitalCard";
 import hospitalImage from "../assets/images/hospital.png";
 
