@@ -1,3 +1,4 @@
+import cors from "cors";
 import dotenv from "dotenv";
 import http from "http";
 import { Server } from "socket.io";
@@ -36,6 +37,11 @@ const allowedOrigins = [
   "http://localhost:5173",
   "https://lifeline-ai-by-lovesh.vercel.app"
 ];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));
 
 const io = new Server(server, {
   cors: {
