@@ -1,6 +1,7 @@
 import upload from "../middleware/uploadMiddleware.js";
 import express from "express";
 import Emergency from "../models/Emergency.js";
+import mongoose from "mongoose";
 
 import {
   reportEmergency,
