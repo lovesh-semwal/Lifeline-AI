@@ -29,7 +29,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto! px-6! py-4! flex justify-between items-center">
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
@@ -98,14 +98,14 @@ const Navbar = () => {
             <>
               <Link
                 to="/login"
-                className="px-4 py-2 border border-red-600 text-red-600 rounded-lg hover:bg-red-50"
+                className="px-4! py-2! border border-red-600 text-red-600 rounded-lg hover:bg-red-50"
               >
                 Login
               </Link>
 
               <Link
                 to="/register"
-                className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
+                className="px-4! py-2! bg-red-600 text-white rounded-lg hover:bg-red-700"
               >
                 Register
               </Link>
@@ -113,7 +113,7 @@ const Navbar = () => {
           ) : (
             <button
               onClick={handleLogout}
-              className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
+              className="px-4! py-2! bg-red-600 text-white rounded-lg hover:bg-red-700"
             >
               Logout
             </button>
@@ -168,7 +168,7 @@ const Navbar = () => {
                 <Link
                   to="/login"
                   onClick={() => setMenuOpen(false)}
-                  className="border border-red-600 text-red-600 rounded-lg py-2 text-center"
+                  className="border border-red-600 text-red-600 rounded-lg py-2! text-center"
                 >
                   Login
                 </Link>
@@ -176,7 +176,7 @@ const Navbar = () => {
                 <Link
                   to="/register"
                   onClick={() => setMenuOpen(false)}
-                  className="bg-red-600 text-white rounded-lg py-2 text-center"
+                  className="bg-red-600 text-white rounded-lg py-2! text-center"
                 >
                   Register
                 </Link>
@@ -187,7 +187,7 @@ const Navbar = () => {
                   handleLogout();
                   setMenuOpen(false);
                 }}
-                className="bg-red-600 text-white rounded-lg py-2"
+                className="bg-red-600 text-white rounded-lg py-2!"
               >
                 Logout
               </button>
