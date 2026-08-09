@@ -55,6 +55,12 @@ const Navbar = () => {
           </li>
 
           <li>
+            <NavLink to="/about" className={navLinkClass}>
+              About
+            </NavLink>
+          </li>
+
+          <li>
             <NavLink to="/report" className={navLinkClass}>
               Report Emergency
             </NavLink>
@@ -137,6 +143,10 @@ const Navbar = () => {
 
             <NavLink to="/" onClick={() => setMenuOpen(false)}>
               Home
+            </NavLink>
+
+            <NavLink to="/about" onClick={() => setMenuOpen(false)}>
+              About
             </NavLink>
 
             <NavLink to="/report" onClick={() => setMenuOpen(false)}>

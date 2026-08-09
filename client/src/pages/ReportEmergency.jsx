@@ -99,20 +99,20 @@ const ReportEmergency = () => {
   };
 
   return (
-  <div className="min-h-screen bg-linear-to-br from-red-50 via-white to-red-100 pt-24 pb-16 px-6">
+  <div className="min-h-screen bg-linear-to-br from-red-50 via-white to-red-100 pt-24! pb-16! px-6!">
     <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
 
       {/* ================= LEFT PANEL ================= */}
 
-      <div className="bg-linear-to-br from-red-600 via-red-700 to-red-800 rounded-3xl shadow-2xl p-14 text-white flex flex-col justify-center">
+      <div className="bg-linear-to-br from-red-600 via-red-700 to-red-800 rounded-3xl shadow-2xl p-14! text-white flex flex-col justify-center">
 
-        <FaAmbulance className="text-8xl mb-8 drop-shadow-lg" />
+        <FaAmbulance className="text-8xl mb-8! drop-shadow-lg" />
 
-        <h1 className="text-5xl font-extrabold mb-6 leading-tight">
+        <h1 className="text-5xl font-extrabold mb-6! leading-tight">
           Report Emergency
         </h1>
 
-        <p className="text-xl leading-9 text-red-100 mb-12">
+        <p className="text-xl leading-9 text-red-100 mb-12!">
           Quickly report an emergency with accurate details.
           Our intelligent system instantly notifies nearby hospitals,
           emergency responders and medical teams to ensure faster
@@ -122,7 +122,7 @@ const ReportEmergency = () => {
         <div className="space-y-8">
 
           <div className="flex items-center gap-5">
-            <div className="bg-white/20 p-4 rounded-full">
+            <div className="bg-white/20 p-4! rounded-full">
               <FaMapMarkerAlt className="text-2xl" />
             </div>
 
@@ -138,7 +138,7 @@ const ReportEmergency = () => {
           </div>
 
           <div className="flex items-center gap-5">
-            <div className="bg-white/20 p-4 rounded-full">
+            <div className="bg-white/20 p-4! rounded-full">
               <FaPhoneAlt className="text-2xl" />
             </div>
 
@@ -154,7 +154,7 @@ const ReportEmergency = () => {
           </div>
 
           <div className="flex items-center gap-5">
-            <div className="bg-white/20 p-4 rounded-full">
+            <div className="bg-white/20 p-4! rounded-full">
               <FaCamera className="text-2xl" />
             </div>
 
@@ -175,13 +175,13 @@ const ReportEmergency = () => {
 
       {/* ================= RIGHT PANEL ================= */}
 
-      <div className="bg-white rounded-3xl shadow-2xl p-12">
+      <div className="bg-white rounded-3xl shadow-2xl p-12!">
 
-        <h2 className="text-4xl font-bold text-gray-800 mb-2">
+        <h2 className="text-4xl font-bold text-gray-800 mb-2!">
           Emergency Details
         </h2>
 
-        <p className="text-gray-500 mb-10">
+        <p className="text-gray-500 mb-10!">
           Fill all required information carefully.
         </p>
 
@@ -193,7 +193,7 @@ const ReportEmergency = () => {
           {/* Patient Name */}
 
           <div>
-            <label className="block text-lg font-semibold text-gray-700 mb-3">
+            <label className="block text-lg font-semibold text-gray-700 mb-3!">
               Patient Name
             </label>
 
@@ -204,14 +204,14 @@ const ReportEmergency = () => {
               onChange={handleChange}
               placeholder="Enter patient's full name"
               required
-              className="w-full px-5 py-4 text-lg border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="w-full px-5! py-4! text-lg border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
             />
           </div>
 
           {/* Emergency Type */}
 
           <div>
-            <label className="block text-lg font-semibold text-gray-700 mb-3">
+            <label className="block text-lg font-semibold text-gray-700 mb-3!">
               Emergency Type
             </label>
 
@@ -220,7 +220,7 @@ const ReportEmergency = () => {
               value={formData.emergencyType}
               onChange={handleChange}
               required
-              className="w-full px-5 py-4 text-lg border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="w-full px-5! py-4! text-lg border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500"
             >
               <option value="">Select Emergency</option>
               <option value="Accident">🚗 Road Accident</option>
@@ -236,7 +236,7 @@ const ReportEmergency = () => {
           {/* Description */}
 
           <div>
-            <label className="block text-lg font-semibold text-gray-700 mb-3">
+            <label className="block text-lg font-semibold text-gray-700 mb-3!">
               Description
             </label>
 
@@ -247,14 +247,14 @@ const ReportEmergency = () => {
               onChange={handleChange}
               placeholder="Describe the emergency in detail..."
               required
-              className="w-full px-5 py-4 text-lg border border-gray-300 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="w-full px-5! py-4! text-lg border border-gray-300 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-red-500"
             />
           </div>
 
           {/* Address */}
 
           <div>
-            <label className="block text-lg font-semibold text-gray-700 mb-3">
+            <label className="block text-lg font-semibold text-gray-700 mb-3!">
               Address
             </label>
 
@@ -265,7 +265,7 @@ const ReportEmergency = () => {
               onChange={handleChange}
               placeholder="Enter complete address"
               required
-              className="w-full px-5 py-4 text-lg border border-gray-300 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="w-full px-5! py-4! text-lg border border-gray-300 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-red-500"
             />
           </div>
 
@@ -274,7 +274,7 @@ const ReportEmergency = () => {
           <button
             type="button"
             onClick={getCurrentLocation}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl text-lg font-semibold flex items-center justify-center gap-3 transition-all duration-300 shadow-lg"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4! rounded-xl text-lg font-semibold flex items-center justify-center gap-3 transition-all duration-300 shadow-lg"
           >
             <FaMapMarkerAlt />
             Detect Current Location
@@ -283,13 +283,13 @@ const ReportEmergency = () => {
                     {/* Contact Number */}
 
           <div>
-            <label className="block text-lg font-semibold text-gray-700 mb-3">
+            <label className="block text-lg font-semibold text-gray-700 mb-3!">
               Contact Number
             </label>
 
-            <div className="flex items-center border border-gray-300 rounded-xl px-5 py-4 focus-within:ring-2 focus-within:ring-red-500">
+            <div className="flex items-center border border-gray-300 rounded-xl px-5! py-4! focus-within:ring-2 focus-within:ring-red-500">
 
-              <FaPhoneAlt className="text-green-600 text-xl mr-4" />
+              <FaPhoneAlt className="text-green-600 text-xl mr-4!" />
 
               <input
                 type="tel"
@@ -307,13 +307,13 @@ const ReportEmergency = () => {
           {/* Upload Image */}
 
           <div>
-            <label className="block text-lg font-semibold text-gray-700 mb-3">
+            <label className="block text-lg font-semibold text-gray-700 mb-3!">
               Upload Incident Image
             </label>
 
-            <div className="border-2 border-dashed border-red-300 rounded-2xl p-8 text-center hover:border-red-500 hover:bg-red-50 transition-all duration-300">
+            <div className="border-2 border-dashed border-red-300 rounded-2xl p-8! text-center hover:border-red-500 hover:bg-red-50 transition-all duration-300">
 
-              <FaCamera className="mx-auto text-6xl text-red-500 mb-5" />
+              <FaCamera className="mx-auto text-6xl text-red-500 mb-5!" />
 
               <input
                 type="file"
@@ -323,7 +323,7 @@ const ReportEmergency = () => {
                 className="block mx-auto text-gray-600"
               />
 
-              <p className="text-sm text-gray-500 mt-3">
+              <p className="text-sm text-gray-500 mt-3!">
                 JPG, PNG or JPEG (Max 5MB)
               </p>
 
@@ -353,7 +353,7 @@ const ReportEmergency = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-linear-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-5 rounded-2xl text-xl font-bold shadow-xl transition-all duration-300 hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full bg-linear-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-5! rounded-2xl text-xl font-bold shadow-xl transition-all duration-300 hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <div className="flex items-center justify-center gap-3">

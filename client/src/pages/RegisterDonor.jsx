@@ -125,29 +125,29 @@ const RegisterDonor = () => {
   };
 
   return (
-    <div className="min-h-screen bg-red-50 py-10 px-5">
+    <div className="min-h-screen bg-red-50 py-10! px-5!">
 
-      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8">
+      <div className="max-auto mx-auto bg-white rounded-2xl shadow-xl p-8!">
 
         {/* Heading */}
-        <h1 className="text-4xl font-bold text-center text-red-600 mb-3">
+        <h1 className="text-4xl font-bold text-center text-red-600 mb-3!">
           Register as Blood Donor
         </h1>
 
-        <p className="text-center text-gray-600 mb-8">
+        <p className="text-center text-gray-600 mb-8!">
           Help save lives by becoming a blood donor.
         </p>
 
         {/* Success Message */}
         {message && (
-          <div className="bg-green-100 text-green-700 p-3 rounded-lg mb-5 text-center">
+          <div className="bg-green-100 text-green-700 p-3 rounded-lg mb-5! text-center">
             {message}
           </div>
         )}
 
         {/* Error Message */}
         {error && (
-          <div className="bg-red-100 text-red-700 p-3 rounded-lg mb-5 text-center">
+          <div className="bg-red-100 text-red-700 p-3! rounded-lg mb-5 text-center">
             {error}
           </div>
         )}
@@ -155,7 +155,7 @@ const RegisterDonor = () => {
         <form onSubmit={handleSubmit}>
 
           {/* Personal Details */}
-          <h2 className="text-2xl font-semibold text-red-600 mb-5">
+          <h2 className="text-2xl font-semibold text-red-600 mb-5!">
             Personal Details
           </h2>
 
@@ -163,7 +163,7 @@ const RegisterDonor = () => {
 
             {/* Full Name */}
             <div>
-              <label className="block mb-2 font-medium">
+              <label className="block mb-2! font-medium">
                 Full Name
               </label>
 
@@ -174,13 +174,13 @@ const RegisterDonor = () => {
                 onChange={handleChange}
                 placeholder="Enter your full name"
                 required
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full p-3! border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
 
             {/* Email */}
             <div>
-              <label className="block mb-2 font-medium">
+              <label className="block mb-2! font-medium">
                 Email
               </label>
 
@@ -191,13 +191,13 @@ const RegisterDonor = () => {
                 onChange={handleChange}
                 placeholder="Enter your email"
                 required
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full p-3! border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
 
             {/* Phone */}
             <div>
-              <label className="block mb-2 font-medium">
+              <label className="block mb-2! font-medium">
                 Phone Number
               </label>
 
@@ -208,13 +208,13 @@ const RegisterDonor = () => {
                 onChange={handleChange}
                 placeholder="Enter phone number"
                 required
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full p-3! border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
 
             {/* Age */}
             <div>
-              <label className="block mb-2 font-medium">
+              <label className="block mb-2! font-medium">
                 Age
               </label>
 
@@ -227,13 +227,13 @@ const RegisterDonor = () => {
                 max="65"
                 placeholder="18 - 65"
                 required
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full p-3! border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
 
             {/* Gender */}
             <div>
-              <label className="block mb-2 font-medium">
+              <label className="block mb-2! font-medium">
                 Gender
               </label>
 
@@ -242,7 +242,7 @@ const RegisterDonor = () => {
                 value={formData.gender}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full p-3! border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
               >
                 <option value="">Select Gender</option>
                 <option value="Male">Male</option>
@@ -253,7 +253,7 @@ const RegisterDonor = () => {
 
             {/* Blood Group */}
             <div>
-              <label className="block mb-2 font-medium">
+              <label className="block mb-2! font-medium">
                 Blood Group
               </label>
 
@@ -262,7 +262,7 @@ const RegisterDonor = () => {
                 value={formData.bloodGroup}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full p-3! border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
               >
                 <option value="">Select Blood Group</option>
                 <option value="A+">A+</option>
@@ -278,7 +278,7 @@ const RegisterDonor = () => {
 
             {/* Weight */}
             <div>
-              <label className="block mb-2 font-medium">
+              <label className="block mb-2! font-medium">
                 Weight (kg)
               </label>
 
@@ -289,13 +289,13 @@ const RegisterDonor = () => {
                 onChange={handleChange}
                 placeholder="Enter weight"
                 required
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full p-3! border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
 
             {/* Last Donation Date */}
             <div>
-              <label className="block mb-2 font-medium">
+              <label className="block mb-2! font-medium">
                 Last Donation Date
               </label>
 
@@ -304,14 +304,14 @@ const RegisterDonor = () => {
                 name="lastDonationDate"
                 value={formData.lastDonationDate}
                 onChange={handleChange}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full p-3! border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
 
           </div>
 
           {/* Address Details */}
-          <h2 className="text-2xl font-semibold text-red-600 mt-10 mb-5">
+          <h2 className="text-2xl font-semibold text-red-600 mt-10! mb-5!">
             Address Details
           </h2>
 
@@ -319,7 +319,7 @@ const RegisterDonor = () => {
 
             {/* Address */}
             <div className="md:col-span-2">
-              <label className="block mb-2 font-medium">
+              <label className="block mb-2! font-medium">
                 Address
               </label>
 
@@ -330,13 +330,13 @@ const RegisterDonor = () => {
                 onChange={handleChange}
                 placeholder="Enter your complete address"
                 required
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full p-3! border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
 
             {/* City */}
             <div>
-              <label className="block mb-2 font-medium">
+              <label className="block mb-2! font-medium">
                 City
               </label>
 
@@ -347,13 +347,13 @@ const RegisterDonor = () => {
                 onChange={handleChange}
                 placeholder="Enter city"
                 required
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full p-3! border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
 
             {/* State */}
             <div>
-              <label className="block mb-2 font-medium">
+              <label className="block mb-2! font-medium">
                 State
               </label>
 
@@ -364,13 +364,13 @@ const RegisterDonor = () => {
                 onChange={handleChange}
                 placeholder="Enter state"
                 required
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full p-3! border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
 
             {/* Pincode */}
             <div>
-              <label className="block mb-2 font-medium">
+              <label className="block mb-2! font-medium">
                 Pincode
               </label>
 
@@ -381,21 +381,21 @@ const RegisterDonor = () => {
                 onChange={handleChange}
                 placeholder="Enter pincode"
                 required
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full p-3! border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
 
           </div>
 
           {/* Location */}
-          <h2 className="text-2xl font-semibold text-red-600 mt-10 mb-5">
+          <h2 className="text-2xl font-semibold text-red-600 mt-10! mb-5!">
             Location
           </h2>
 
           <button
             type="button"
             onClick={getLocation}
-            className="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700 transition mb-5"
+            className="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700 transition mb-5!"
           >
             📍 Get My Current Location
           </button>
@@ -410,7 +410,7 @@ const RegisterDonor = () => {
               readOnly
               placeholder="Latitude"
               required
-              className="w-full p-3 border rounded-lg bg-gray-100"
+              className="w-full p-3! border rounded-lg bg-gray-100"
             />
 
             {/* Longitude */}
@@ -421,7 +421,7 @@ const RegisterDonor = () => {
               readOnly
               placeholder="Longitude"
               required
-              className="w-full p-3 border rounded-lg bg-gray-100"
+              className="w-full p-3! border rounded-lg bg-gray-100"
             />
 
           </div>
@@ -430,7 +430,7 @@ const RegisterDonor = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full mt-10 bg-red-600 text-white py-4 rounded-lg text-lg font-semibold hover:bg-red-700 transition disabled:bg-gray-400"
+            className="w-full mt-10! bg-red-600 text-white py-4 rounded-lg text-lg font-semibold hover:bg-red-700 transition disabled:bg-gray-400"
           >
             {loading ? "Registering..." : "Register as Blood Donor"}
           </button>

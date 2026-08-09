@@ -64,7 +64,7 @@ const MyEmergencies = () => {
   }
 
   return (
-  <div className="min-h-screen bg-gray-100 pt-28 pb-16 px-8">
+  <div className="min-h-screen bg-gray-100 pt-28! pb-16! px-8!">
     <div className="max-w-screen-2xl mx-auto space-y-12">
 
       {/* ================= HEADER ================= */}
@@ -73,13 +73,13 @@ const MyEmergencies = () => {
 
         {/* Left Banner */}
 
-        <div className="flex-1 bg-linear-to-r from-red-600 via-red-500 to-red-600 rounded-3xl shadow-xl p-10 myh">
+        <div className="flex-1 bg-linear-to-r from-red-600 via-red-500 to-red-600 rounded-3xl shadow-xl p-10! ">
 
           <h1 className="text-5xl font-bold text-white">
             🚨 My Emergencies
           </h1>
 
-          <p className="mt-4 text-red-100 text-xl leading-8">
+          <p className="mt-4! text-red-100 text-xl leading-8">
             Track all your reported emergencies and monitor
             their current status in real time.
           </p>
@@ -88,13 +88,13 @@ const MyEmergencies = () => {
 
         {/* Total Reports */}
 
-        <div className="bg-white rounded-3xl shadow-xl px-10 py-8 min-w-60 text-center tr">
+        <div className="bg-white rounded-3xl shadow-xl px-10! py-8! min-w-60 text-center ">
 
           <p className="text-gray-500 text-xl">
             Total Reports
           </p>
 
-          <h2 className="text-6xl font-bold text-red-600 mt-3">
+          <h2 className="text-6xl font-bold text-red-600 mt-3!">
             {emergencies.length}
           </h2>
 
@@ -112,13 +112,13 @@ const MyEmergencies = () => {
 
         {/* Total */}
 
-        <div className="bg-white rounded-3xl shadow-lg p-8 hover:shadow-xl transition">
+        <div className="bg-white rounded-3xl shadow-lg p-8! hover:shadow-xl transition">
 
           <p className="text-gray-500 text-lg">
             Total Emergencies
           </p>
 
-          <h2 className="text-5xl font-bold text-red-600 mt-4">
+          <h2 className="text-5xl font-bold text-red-600 mt-4!">
             {emergencies.length}
           </h2>
 
@@ -126,13 +126,13 @@ const MyEmergencies = () => {
 
         {/* Pending */}
 
-        <div className="bg-white rounded-3xl shadow-lg p-8 hover:shadow-xl transition">
+        <div className="bg-white rounded-3xl shadow-lg p-8! hover:shadow-xl transition">
 
           <p className="text-gray-500 text-lg">
             Pending Cases
           </p>
 
-          <h2 className="text-5xl font-bold text-yellow-500 mt-4">
+          <h2 className="text-5xl font-bold text-yellow-500 mt-4!">
             {
               emergencies.filter(
                 (e) => e.status === "Pending"
@@ -144,13 +144,13 @@ const MyEmergencies = () => {
 
         {/* Completed */}
 
-        <div className="bg-white rounded-3xl shadow-lg p-8 hover:shadow-xl transition">
+        <div className="bg-white rounded-3xl shadow-lg p-8! hover:shadow-xl transition">
 
           <p className="text-gray-500 text-lg">
             Completed Cases
           </p>
 
-          <h2 className="text-5xl font-bold text-green-600 mt-4">
+          <h2 className="text-5xl font-bold text-green-600 mt-4!">
             {
               emergencies.filter(
                 (e) => e.status === "Completed"
@@ -181,7 +181,7 @@ const MyEmergencies = () => {
             />
 
             {/* Content */}
-            <div className="p-10 space-y-8">
+            <div className="p-10! space-y-8">
 
               {/* Emergency Type + Status */}
 
@@ -192,7 +192,7 @@ const MyEmergencies = () => {
                 </h2>
 
                 <span
-                  className={`px-5 py-2 rounded-full text-sm font-bold self-start
+                  className={`px-5! py-2! rounded-full text-sm font-bold self-start
 
                   ${
                     emergency.status === "Pending"
@@ -211,7 +211,7 @@ const MyEmergencies = () => {
 
               <div>
 
-                <h3 className="text-lg font-semibold text-gray-700 mb-2">
+                <h3 className="text-lg font-semibold text-gray-700 mb-2!">
                   Description
                 </h3>
 
@@ -234,7 +234,7 @@ const MyEmergencies = () => {
                     Patient Name
                   </p>
 
-                  <p className="text-lg font-semibold mt-1">
+                  <p className="text-lg font-semibold mt-1!">
                     👤 {emergency.patientName}
                   </p>
                 </div>
@@ -244,7 +244,7 @@ const MyEmergencies = () => {
                     Contact Number
                   </p>
 
-                  <p className="text-lg font-semibold mt-1">
+                  <p className="text-lg font-semibold mt-1!">
                     📞 {emergency.phone}
                   </p>
                 </div>
@@ -254,7 +254,7 @@ const MyEmergencies = () => {
                     Priority
                   </p>
 
-                  <p className="text-lg font-semibold mt-1">
+                  <p className="text-lg font-semibold mt-1!">
                     ⚡ {emergency.priority}
                   </p>
                 </div>
@@ -264,7 +264,7 @@ const MyEmergencies = () => {
                     Assigned Hospital
                   </p>
 
-                  <p className="text-lg font-semibold mt-1">
+                  <p className="text-lg font-semibold mt-1!">
                     🏥{" "}
                     {emergency.hospital
                       ? emergency.hospital.name
@@ -278,7 +278,7 @@ const MyEmergencies = () => {
 
               <div>
 
-                <h3 className="text-lg font-semibold text-gray-700 mb-2">
+                <h3 className="text-lg font-semibold text-gray-700 mb-2!">
                   Address
                 </h3>
 
@@ -292,7 +292,7 @@ const MyEmergencies = () => {
 
               <div>
 
-                <h3 className="text-lg font-semibold text-gray-700 mb-2">
+                <h3 className="text-lg font-semibold text-gray-700 mb-2!">
                   Reported On
                 </h3>
 
@@ -304,7 +304,7 @@ const MyEmergencies = () => {
 
               {/* Button */}
 
-              <button className="w-full bg-red-600 hover:bg-red-700 text-white py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.02]">
+              <button className="w-full bg-red-600 hover:bg-red-700 text-white py-4! rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-[1.02]">
                 View Details
               </button>
 

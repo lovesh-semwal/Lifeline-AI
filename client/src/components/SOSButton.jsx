@@ -80,15 +80,15 @@ const SOSButton = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-white rounded-2xl shadow-lg p-8 SOS">
+    <div className="flex flex-col items-center justify-center bg-white rounded-2xl shadow-lg p-8!">
 
-      <MdEmergency className="text-7xl text-red-600 animate-pulse mb-4" />
+      <MdEmergency className="text-7xl text-red-600 animate-pulse mb-4!" />
 
       <h2 className="text-3xl font-bold text-gray-800">
         Emergency SOS
       </h2>
 
-      <p className="text-gray-500 mt-3 text-center">
+      <p className="text-gray-500 mt-3! text-center">
         Press the button below to send your current location during an
         emergency.
       </p>
@@ -96,7 +96,7 @@ const SOSButton = () => {
       <button
         onClick={handleSOS}
         disabled={loading}
-        className={`mt-8 w-52 h-52 rounded-full text-white text-5xl font-bold shadow-2xl transition transform hover:scale-105 ${
+        className={`mt-8! w-52 h-52 rounded-full text-white text-5xl font-bold shadow-2xl transition transform hover:scale-105 ${
           loading
             ? "bg-gray-500 cursor-not-allowed"
             : "bg-red-600 hover:bg-red-700 animate-pulse"
@@ -106,19 +106,19 @@ const SOSButton = () => {
           "..."
         ) : (
           <div className="flex flex-col items-center">
-            <FaAmbulance className="text-5xl mb-2" />
+            <FaAmbulance className="text-5xl mb-2!" />
             SOS
           </div>
         )}
       </button>
 
-      <div className="mt-8 flex items-center gap-2 text-gray-600">
+      <div className="mt-8! flex items-center gap-2 text-gray-600">
         <FaLocationArrow className="text-red-600" />
         <span>Location Enabled</span>
       </div>
 
       {message && (
-        <div className="mt-6 bg-green-100 text-green-700 px-5 py-3 rounded-lg text-center max-w-md">
+        <div className="mt-6! bg-green-100 text-green-700 px-5! py-3! rounded-lg text-center max-w-md">
           {message}
         </div>
       )}

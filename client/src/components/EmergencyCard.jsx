@@ -39,28 +39,28 @@ const EmergencyCard = ({
       <div className="p-6">
 
         {/* Emergency Type */}
-        <h2 className="text-2xl font-bold text-gray-800 mb-3">
+        <h2 className="text-2xl font-bold text-gray-800 mb-3!">
           {type}
         </h2>
 
         {/* Location */}
-        <div className="flex items-center gap-2 text-gray-600 mb-3">
+        <div className="flex items-center gap-2 text-gray-600 mb-3!">
           <FaMapMarkerAlt className="text-red-600" />
           <span>{location}</span>
         </div>
 
         {/* Time */}
-        <div className="flex items-center gap-2 text-gray-600 mb-3">
+        <div className="flex items-center gap-2 text-gray-600 mb-3!">
           <FaClock className="text-blue-600" />
           <span>{time}</span>
         </div>
 
         {/* Severity */}
-        <div className="flex items-center gap-2 mb-4">
+        <div className="flex items-center gap-2 mb-4!">
           <FaExclamationTriangle className="text-orange-600" />
 
           <span
-            className={`px-3 py-1 rounded-full text-sm font-semibold ${
+            className={`px-3! py-1! rounded-full text-sm font-semibold ${
               severityColor[severity]
             }`}
           >
@@ -71,7 +71,7 @@ const EmergencyCard = ({
         {/* Status */}
         <div className="mb-5">
           <span
-            className={`px-4 py-2 rounded-full text-sm font-semibold ${
+            className={`px-4! py-2! rounded-full text-sm font-semibold ${
               statusColor[status]
             }`}
           >
@@ -81,7 +81,7 @@ const EmergencyCard = ({
 
         {/* Button */}
         <button
-          className="w-full bg-red-600 text-white py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-red-700 transition"
+          className="w-full bg-red-600 text-white py-3! rounded-lg flex items-center justify-center gap-2 hover:bg-red-700 transition"
         >
           View Details
           <FaArrowRight />

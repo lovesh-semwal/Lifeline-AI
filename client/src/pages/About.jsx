@@ -51,14 +51,14 @@ const About = () => {
     <div className="min-h-screen bg-gray-100">
 
       {/* Hero Section */}
-      <section className="bg-red-600 text-white py-16">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+      <section className="bg-red-600 text-white py-16!">
+        <div className="max-auto mx-auto px-6! text-center">
 
           <h1 className="text-5xl font-bold">
             About LifeLine AI
           </h1>
 
-          <p className="mt-6 text-lg max-w-3xl mx-auto">
+          <p className="mt-6! text-lg max-auto mx-auto">
             LifeLine AI is an AI-powered emergency response platform
             designed to help people receive faster medical assistance,
             find hospitals, connect with blood donors, and access
@@ -69,15 +69,15 @@ const About = () => {
       </section>
 
       {/* Mission */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
+      <section className="max-auto mx-auto px-6! py-16!">
 
-        <div className="bg-white rounded-2xl shadow-lg p-10">
+        <div className="bg-white rounded-2xl shadow-lg p-10!">
 
           <h2 className="text-3xl font-bold text-center text-gray-800">
             Our Mission
           </h2>
 
-          <p className="text-gray-600 mt-6 text-center leading-8">
+          <p className="text-gray-600 mt-6! text-center leading-8">
             Our mission is to reduce emergency response time by
             combining Artificial Intelligence, real-time location,
             healthcare resources, and community support into one
@@ -90,9 +90,9 @@ const About = () => {
       </section>
 
       {/* Features */}
-      <section className="max-w-7xl mx-auto px-6 pb-16">
+      <section className="max-auto mx-auto px-6! pb-16!">
 
-        <h2 className="text-4xl font-bold text-center mb-12">
+        <h2 className="text-4xl font-bold text-center mb-12!">
           Key Features
         </h2>
 
@@ -111,7 +111,7 @@ const About = () => {
                 {feature.title}
               </h3>
 
-              <p className="text-gray-600 mt-4">
+              <p className="text-gray-600 mt-4!">
                 {feature.description}
               </p>
             </div>
@@ -122,15 +122,15 @@ const About = () => {
       </section>
 
       {/* Footer Message */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-16!">
 
-        <div className="max-w-4xl mx-auto text-center px-6">
+        <div className="max-auto mx-auto text-center px-6!">
 
           <h2 className="text-3xl font-bold text-red-600">
             Together, We Can Save Lives
           </h2>
 
-          <p className="text-gray-600 mt-5 leading-8">
+          <p className="text-gray-600 mt-5! leading-8">
             LifeLine AI is built with the vision of using technology to
             improve emergency healthcare services. Every second matters,
             and our goal is to make those seconds count.

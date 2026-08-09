@@ -39,7 +39,7 @@ const openMaps = () => {
       <div className="p-6">
 
         {/* Hospital Name */}
-        <div className="flex items-center gap-2 mb-3">
+        <div className="flex items-center gap-2 mb-3!">
           <FaHospital className="text-red-600 text-xl" />
           <h2 className="text-2xl font-bold text-gray-800">
             {name}
@@ -47,32 +47,32 @@ const openMaps = () => {
         </div>
 
         {/* Address */}
-        <div className="flex items-center gap-2 text-gray-600 mb-3">
+        <div className="flex items-center gap-2 text-gray-600 mb-3!">
           <FaMapMarkerAlt className="text-red-500" />
           <span>{address}</span>
         </div>
 
         {/* Phone */}
-        <div className="flex items-center gap-2 text-gray-600 mb-3">
+        <div className="flex items-center gap-2 text-gray-600 mb-3!">
           <FaPhoneAlt className="text-green-600" />
           <span>{phone}</span>
         </div>
 
         {/* Available Beds */}
-        <div className="flex items-center gap-2 text-gray-600 mb-3">
+        <div className="flex items-center gap-2 text-gray-600 mb-3!">
           <FaBed className="text-blue-600" />
           <span>{beds} Beds Available</span>
         </div>
 
         {/* Distance */}
-        <div className="flex items-center gap-2 text-gray-600 mb-5">
+        <div className="flex items-center gap-2 text-gray-600 mb-5!">
           <FaLocationArrow className="text-purple-600" />
           <span>{distance} Km miles Away</span>
         </div>
 
         {/* Button */}
         <button
-          className="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition"
+          className="w-full bg-red-600 text-white py-3! rounded-lg hover:bg-red-700 transition"
           onClick={openMaps}
         >
           Get Directions

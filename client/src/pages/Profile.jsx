@@ -67,8 +67,8 @@ const Profile = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center py-12">
-      <div className="bg-white rounded-2xl shadow-2xl p-12 w-full max-w-4xl space-y-12 text-center profile-container">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center py-12!">
+      <div className="bg-white rounded-2xl shadow-2xl p-12! w-full max-w-4xl space-y-12 text-center profile-container">
 
         {/* Heading */}
         <h1 className="text-4xl font-bold text-red-600">My Profile</h1>
@@ -82,7 +82,7 @@ const Profile = () => {
 
         {/* User Information - vertical layout with spacing */}
         <div className="space-y-6 text-left profile-detail">
-          <div className="flex items-center gap-4 p-6 bg-gray-50 rounded-xl">
+          <div className="flex items-center gap-4 p-6! bg-gray-50 rounded-xl">
             <FaEnvelope className="text-red-600 text-2xl" />
             <div>
               <p className="text-gray-500">Email</p>
@@ -90,7 +90,7 @@ const Profile = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-4 p-6 bg-gray-50 rounded-xl">
+          <div className="flex items-center gap-4 p-6! bg-gray-50 rounded-xl">
             <FaPhoneAlt className="text-green-600 text-2xl" />
             <div>
               <p className="text-gray-500">Phone</p>
@@ -98,7 +98,7 @@ const Profile = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-4 p-6 bg-gray-50 rounded-xl">
+          <div className="flex items-center gap-4 p-6! bg-gray-50 rounded-xl">
             <FaMapMarkerAlt className="text-blue-600 text-2xl" />
             <div>
               <p className="text-gray-500">Location</p>
@@ -106,7 +106,7 @@ const Profile = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-4 p-6 bg-gray-50 rounded-xl">
+          <div className="flex items-center gap-4 p-6! bg-gray-50 rounded-xl">
             <FaTint className="text-red-500 text-2xl" />
             <div>
               <p className="text-gray-500">Blood Group</p>
@@ -118,7 +118,7 @@ const Profile = () => {
         {/* Logout Button */}
         <button
           onClick={handleLogout}
-          className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-xl flex items-center gap-3 justify-center transition profile-logout"
+          className="bg-red-600 hover:bg-red-700 text-white px-10! py-4! rounded-xl flex items-center gap-3 justify-center transition profile-logout"
         >
           <FaSignOutAlt />
           Logout

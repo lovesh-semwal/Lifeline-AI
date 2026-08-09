@@ -88,8 +88,8 @@ const Home = () => {
       <HeroSection />
 
       {/* Emergency Section */}
-       <section className="py-10">
-      <h1 className="text-4xl font-bold text-center mb-8 re">
+       <section className="py-10!">
+      <h1 className="text-4xl font-bold text-center mb-8! ">
         Recent Emergencies
       </h1>
 
@@ -120,11 +120,11 @@ const Home = () => {
 
       {/* Hospitals */}
 
-            <section className="py-8 bg-white hospital-home">
+            <section className="py-8! bg-white hospital-home">
 
-  <div className="flex justify-between items-center px-6 mb-6">
+  <div className="flex justify-between items-center px-6! mb-6!">
 
-    <h2 className="text-4xl font-bold text-gray-800 text-center hh">
+    <h2 className="text-4xl font-bold text-gray-800 text-center ">
       Nearby Hospitals :-
     </h2>
 
@@ -133,7 +133,7 @@ const Home = () => {
   </div>
   <Link
       to="/hospitals"
-      className="text-red-800 font-semibold hover:underline text-center hh2"
+      className="text-red-800 font-semibold hover:underline text-center"
     >
       View All Hospitals →
     </Link>
@@ -143,8 +143,8 @@ const Home = () => {
 </section>
 
       {/* Blood Donors */}
-      <section className="py-10">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-8 abd">
+      <section className="py-10!">
+        <h2 className="text-4xl font-bold text-center text-gray-800 mb-8!">
           Available Blood Donors
         </h2>
 
@@ -155,7 +155,7 @@ const Home = () => {
             No blood donors available.
           </p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6!">
             {donors.map((donor) => (
   <BloodDonorCard
     key={donor._id}
@@ -177,11 +177,11 @@ const Home = () => {
       </section>
 
       {/* SOS Button */}
-      <section className="bg-red-50 py-20">
+      <section className="bg-red-50 py-20!">
 
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-auto mx-auto px-6! ">
 
-          <h2 className="text-4xl font-bold text-center mb-10 nih">
+          <h2 className="text-4xl font-bold text-center mb-10! ">
             Need Immediate Help?
           </h2>
 

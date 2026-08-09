@@ -65,10 +65,10 @@ const AIChat = () => {
   
 
   return (
-    <div className="max-w-3xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden">
+    <div className="max-auto mx-auto bg-white shadow-xl rounded-2xl overflow-hidden">
 
       {/* Header */}
-      <div className="bg-red-600 text-white p-4 flex items-center gap-5 AI-header">
+      <div className="bg-red-600 text-white p-4! flex items-center gap-5 AI-header">
         <FaRobot className="text-3xl" />
         <div>
           <h2 className="text-xl font-bold">LifeLine AI Assistant</h2>
@@ -77,7 +77,7 @@ const AIChat = () => {
       </div>
 
       {/* Chat Messages */}
-      <div className="h-112.5 overflow-y-auto p-5 bg-gray-100 space-y-4">
+      <div className="h-112.5 overflow-y-auto p-5! bg-gray-100 space-y-4">
 
         {messages.map((msg, index) => (
           <div
@@ -95,7 +95,7 @@ const AIChat = () => {
                   : ""
               }`}
             >
-              <div className="text-2xl mt-1">
+              <div className="text-2xl mt-1!">
                 {msg.sender === "user" ? (
                   <FaUser className="text-blue-600" />
                 ) : (
@@ -119,7 +119,7 @@ const AIChat = () => {
       </div>
 
       {/* Input Area */}
-      <div className="flex p-4 border-t bg-white AI-input">
+      <div className="flex p-4! border-t bg-white AI-input">
 
         <input
           type="text"
@@ -131,12 +131,12 @@ const AIChat = () => {
               sendMessage();
             }
           }}
-          className="flex-1 border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500 AI-input"
+          className="flex-1 border rounded-lg px-4! py-3! focus:outline-none focus:ring-2 focus:ring-red-500 AI-input"
         />
 
         <button
           onClick={sendMessage}
-          className="ml-3 bg-red-600 hover:bg-red-700 text-white px-5 rounded-lg flex items-center justify-center"
+          className="ml-3! bg-red-600 hover:bg-red-700 text-white px-5! rounded-lg flex items-center justify-center"
         >
           <FaPaperPlane className="paperPlane"/>
         </button>

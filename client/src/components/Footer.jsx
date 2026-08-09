@@ -12,30 +12,25 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white mt-10">
-      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-10">
-
+    <footer className="bg-gray-900 text-white mt-10!">
+      <div className="max-auto mx-auto px-6! py-10! grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Logo & About */}
         <div>
           <div className="flex items-center gap-2">
             <FaHeartbeat className="text-red-500 text-3xl" />
-            <h2 className="text-2xl font-bold">
-              LifeLine AI
-            </h2>
+            <h2 className="text-2xl font-bold">LifeLine AI</h2>
           </div>
 
-          <p className="text-gray-400 mt-4 leading-7">
-            LifeLine AI is an AI-powered emergency response platform
-            that helps users quickly connect with hospitals, blood
-            donors, ambulances, and first-aid guidance.
+          <p className="text-gray-400 mt-4! leading-7">
+            LifeLine AI is an AI-powered emergency response platform that helps
+            users quickly connect with hospitals, blood donors, ambulances, and
+            first-aid guidance.
           </p>
         </div>
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">
-            Quick Links
-          </h3>
+          <h3 className="text-xl font-semibold mb-4!">Quick Links</h3>
 
           <ul className="space-y-3 text-gray-400">
             <li>
@@ -72,12 +67,9 @@ const Footer = () => {
 
         {/* Emergency Contact */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">
-            Emergency Contact
-          </h3>
+          <h3 className="text-xl font-semibold mb-4!">Emergency Contact</h3>
 
           <div className="space-y-4 text-gray-400">
-
             <div className="flex items-center gap-3">
               <FaPhoneAlt className="text-red-500" />
               <span>+91 98765 43210</span>
@@ -92,57 +84,59 @@ const Footer = () => {
               <FaMapMarkerAlt className="text-red-500" />
               <span>India</span>
             </div>
-
           </div>
         </div>
 
         {/* Social Media */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">
-            Follow Us
-          </h3>
+          <h3 className="text-xl font-semibold mb-4!">Follow Us</h3>
 
           <div className="flex gap-4 text-2xl">
-
             <a
-              href="#"
-              className="hover:text-blue-500 transition"
-            >
-              <FaFacebook />
-            </a>
-
-            <a
-              href="#"
-              className="hover:text-pink-500 transition"
-            >
-              <FaInstagram />
-            </a>
-
-            <a
-              href="#"
+              href="https://facebook.com/"
+              target="_blank"
+              rel="noreferrer"
               className="hover:text-blue-400 transition"
             >
-              <FaLinkedin />
+              <FaFacebook size={18} />
             </a>
 
             <a
-              href="#"
-              className="hover:text-gray-300 transition"
+              href="https://instagram.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-blue-400 transition"
             >
-              <FaGithub />
+              <FaInstagram size={18} />
             </a>
 
+            <a
+              href="https://linkedin.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-blue-400 transition"
+            >
+              <FaLinkedin size={18} />
+            </a>
+
+            <a
+              href="https://github.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-blue-400 transition"
+            >
+              <FaGithub size={18} />
+            </a>
           </div>
 
-          <p className="text-gray-400 mt-5">
+          <p className="text-gray-400 mt-5!">
             Stay connected for emergency updates and new features.
           </p>
         </div>
-
       </div>
 
       {/* Bottom Footer */}
-      <div className="border-t border-gray-700 py-4 text-center text-gray-400 text-sm">
+      <div className="border-t border-gray-700 py-4! text-center text-gray-400 text-sm">
         © {new Date().getFullYear()} LifeLine AI. All Rights Reserved.
       </div>
     </footer>

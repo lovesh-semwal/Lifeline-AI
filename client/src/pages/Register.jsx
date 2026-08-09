@@ -63,15 +63,15 @@ const Register = () => {
 
   return (
     <div className="min-h-screen bg-red-50 flex items-center justify-center px-4 py-10">
-      <div className="bg-white shadow-2xl rounded-2xl w-full max-w-lg p-8">
+      <div className="bg-white shadow-2xl rounded-2xl w-full max-w-lg p-8!">
 
         {/* Logo */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-8!">
           <h1 className="text-4xl font-bold text-red-600">
             🚑 LifeLine AI
           </h1>
 
-          <p className="text-gray-500 mt-2">
+          <p className="text-gray-500 mt-2!">
             Create Your Account
           </p>
         </div>
@@ -81,11 +81,11 @@ const Register = () => {
 
           {/* Name */}
           <div>
-            <label className="block mb-2 font-medium">
+            <label className="block mb-2! font-medium">
               Full Name
             </label>
 
-            <div className="flex items-center border rounded-lg px-3">
+            <div className="flex items-center border rounded-lg px-3!">
               <FaUser className="text-gray-400" />
 
               <input
@@ -95,18 +95,18 @@ const Register = () => {
                 placeholder="Enter your full name"
                 value={formData.fullName}
                 onChange={handleChange}
-                className="w-full p-3 outline-none"
+                className="w-full p-3! outline-none"
               />
             </div>
           </div>
 
           {/* Email */}
           <div>
-            <label className="block mb-2 font-medium">
+            <label className="block mb-2! font-medium">
               Email
             </label>
 
-            <div className="flex items-center border rounded-lg px-3">
+            <div className="flex items-center border rounded-lg px-3!">
               <FaEnvelope className="text-gray-400" />
 
               <input
@@ -116,18 +116,18 @@ const Register = () => {
                 placeholder="Enter your email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full p-3 outline-none"
+                className="w-full p-3! outline-none"
               />
             </div>
           </div>
 
           {/* Phone */}
           <div>
-            <label className="block mb-2 font-medium">
+            <label className="block mb-2! font-medium">
               Phone Number
             </label>
 
-            <div className="flex items-center border rounded-lg px-3">
+            <div className="flex items-center border rounded-lg px-3!">
               <FaPhoneAlt className="text-gray-400" />
 
               <input
@@ -137,14 +137,14 @@ const Register = () => {
                 placeholder="Enter your phone number"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full p-3 outline-none"
+                className="w-full p-3! outline-none"
               />
             </div>
           </div>
 
           {/* Blood Group */}
 <div>
-  <label className="block mb-2 font-medium">
+  <label className="block mb-2! font-medium">
     Blood Group
   </label>
 
@@ -167,7 +167,7 @@ const Register = () => {
 
 {/* Address */}
 <div>
-  <label className="block mb-2 font-medium">
+  <label className="block mb-2! font-medium">
     Address
   </label>
 
@@ -177,17 +177,17 @@ const Register = () => {
     placeholder="Enter your address"
     value={formData.address}
     onChange={handleChange}
-    className="w-full border rounded-lg p-3 outline-none resize-none"
+    className="w-full border rounded-lg p-3! outline-none resize-none"
   />
 </div>
 
           {/* Password */}
           <div>
-            <label className="block mb-2 font-medium">
+            <label className="block mb-2! font-medium">
               Password
             </label>
 
-            <div className="flex items-center border rounded-lg px-3">
+            <div className="flex items-center border rounded-lg px-3!">
               <FaLock className="text-gray-400" />
 
               <input
@@ -197,7 +197,7 @@ const Register = () => {
                 placeholder="Create a password"
                 value={formData.password}
                 onChange={handleChange}
-                className="w-full p-3 outline-none"
+                className="w-full p-3! outline-none"
               />
 
               <button
@@ -211,11 +211,11 @@ const Register = () => {
 
           {/* Confirm Password */}
           <div>
-            <label className="block mb-2 font-medium">
+            <label className="block mb-2! font-medium">
               Confirm Password
             </label>
 
-            <div className="flex items-center border rounded-lg px-3">
+            <div className="flex items-center border rounded-lg px-3!">
               <FaLock className="text-gray-400" />
 
               <input
@@ -225,7 +225,7 @@ const Register = () => {
                 placeholder="Confirm your password"
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                className="w-full p-3 outline-none"
+                className="w-full p-3! outline-none"
               />
 
               <button
@@ -246,7 +246,7 @@ const Register = () => {
           {/* Register Button */}
           <button
             type="submit"
-            className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-semibold transition"
+            className="w-full bg-red-600 hover:bg-red-700 text-white py-3! rounded-lg font-semibold transition"
           >
             Create Account
           </button>
@@ -257,7 +257,7 @@ const Register = () => {
 
             <Link
               to="/login"
-              className="text-red-600 font-semibold ml-2 hover:underline"
+              className="text-red-600 font-semibold ml-2! hover:underline"
             >
               Login
             </Link>

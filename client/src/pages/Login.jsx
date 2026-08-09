@@ -60,9 +60,9 @@ const Login = () => {
 }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-red-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-red-50 flex items-center justify-center px-4!">
 
-      <div className="bg-white shadow-2xl rounded-2xl w-full max-w-md p-8">
+      <div className="bg-white shadow-2xl rounded-2xl w-full max-w-md p-8!">
 
         {/* Logo */}
         <div className="text-center">
@@ -71,7 +71,7 @@ const Login = () => {
             🚑 LifeLine AI
           </h1>
 
-          <p className="text-gray-500 mt-2">
+          <p className="text-gray-500 mt-2!">
             Welcome Back
           </p>
 
@@ -81,18 +81,18 @@ const Login = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="mt-8 space-y-5"
+          className="mt-8! space-y-5"
         >
 
           {/* Email */}
 
           <div>
 
-            <label className="block mb-2 font-medium">
+            <label className="block mb-2! font-medium">
               Email
             </label>
 
-            <div className="flex items-center border rounded-lg px-3">
+            <div className="flex items-center border rounded-lg px-3!">
 
               <FaEnvelope className="text-gray-400" />
 
@@ -103,7 +103,7 @@ const Login = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter your email"
-                className="w-full p-3 outline-none"
+                className="w-full p-3! outline-none"
               />
 
             </div>
@@ -114,11 +114,11 @@ const Login = () => {
 
           <div>
 
-            <label className="block mb-2 font-medium">
+            <label className="block mb-2! font-medium">
               Password
             </label>
 
-            <div className="flex items-center border rounded-lg px-3">
+            <div className="flex items-center border rounded-lg px-3!">
 
               <FaLock className="text-gray-400" />
 
@@ -129,7 +129,7 @@ const Login = () => {
                 value={formData.password}
                 onChange={handleChange}
                 placeholder="Enter your password"
-                className="w-full p-3 outline-none"
+                className="w-full p-3! outline-none"
               />
 
               <button
@@ -153,7 +153,7 @@ const Login = () => {
 
           <div className="flex justify-between items-center">
 
-            <label className="flex items-center gap-2">
+            <label className="flex items-center gap-2!">
 
               <input
                 type="checkbox"
@@ -178,7 +178,7 @@ const Login = () => {
           {/* Login */}
 
           <button
-            className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-semibold transition"
+            className="w-full bg-red-600 hover:bg-red-700 text-white py-3! rounded-lg font-semibold transition"
           >
             Login
           </button>
@@ -193,7 +193,7 @@ const Login = () => {
 
           <button
             type="button"
-            className="w-full border py-3 rounded-lg flex justify-center items-center gap-3 hover:bg-gray-100 transition"
+            className="w-full border py-3! rounded-lg flex justify-center items-center gap-3 hover:bg-gray-100 transition"
           >
             <FaGoogle className="text-red-500" />
 
@@ -208,7 +208,7 @@ const Login = () => {
 
             <Link
               to="/register"
-              className="text-red-600 ml-2 font-semibold hover:underline"
+              className="text-red-600 ml-2! font-semibold hover:underline"
             >
               Register
             </Link>

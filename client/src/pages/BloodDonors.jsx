@@ -54,9 +54,9 @@ const BloodDonors = () => {
 
 
   return (
-    <div className="min-h-screen bg-red-50 py-16"> {/* Increased vertical padding */}
+    <div className="min-h-screen bg-red-50 py-16!"> {/* Increased vertical padding */}
 
-  <div className="max-w-7xl mx-auto px-8 space-y-12"> {/* Added horizontal padding and vertical spacing */}
+  <div className="max-auto mx-auto px-8! space-y-12"> {/* Added horizontal padding and vertical spacing */}
 
     {/* Heading */}
     <div className="space-y-3 text-center">
@@ -72,25 +72,25 @@ const BloodDonors = () => {
     <div className="flex justify-center">
       <button
         onClick={() => navigate("/register-donor")}
-        className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition-all shadow-md"
+        className="bg-red-600 text-white px-8! py-4! rounded-lg font-semibold hover:bg-red-700 transition-all shadow-md"
       >
         Become a Blood Donor
       </button>
     </div>
 
     {/* Filters */}
-    <div className="flex flex-col md:flex-row gap-6 justify-center items-center mt-8 input-blood">
+    <div className="flex flex-col md:flex-row gap-6 justify-center items-center mt-8! input-blood">
       <input
         type="text"
         placeholder="Search by name or city..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="md:w-96 p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 shadow-sm"
+        className="md:w-96 p-4! border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 shadow-sm"
       />
       <select
         value={bloodGroup}
         onChange={(e) => setBloodGroup(e.target.value)}
-        className="p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 shadow-sm"
+        className="p-4! border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 shadow-sm"
       >
         <option value="">All Blood Groups</option>
         <option value="A+">A+</option>
@@ -106,11 +106,11 @@ const BloodDonors = () => {
 
     {/* Donor Cards */}
     {loading ? (
-      <div className="text-center text-xl text-gray-500 mt-10">
+      <div className="text-center text-xl text-gray-500 mt-10!">
         Loading donors...
       </div>
     ) : (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-12!">
         {filteredDonors.length > 0 ? (
           filteredDonors.map((donor) => (
             <BloodDonorCard
