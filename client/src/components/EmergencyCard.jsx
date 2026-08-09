@@ -69,7 +69,7 @@ const EmergencyCard = ({
         </div>
 
         {/* Status */}
-        <div className="mb-5">
+        <div className="mb-5!">
           <span
             className={`px-4! py-2! rounded-full text-sm font-semibold ${
               statusColor[status]
