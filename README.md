@@ -454,7 +454,7 @@ Example:
 ## 🌐 Live Demo
 
 **Live Website:**
-lifeline-ai-by-lovesh.vercel.app
+https://lifeline-ai-by-lovesh.vercel.app/
 
 **GitHub Repository:**
 https://github.com/lovesh-semwal/Lifeline-AI/
