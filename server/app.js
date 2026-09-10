@@ -36,9 +36,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Enable CORS
+// Enable CORS
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://lifeline-ai-by-lovesh.vercel.app",
+];
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: allowedOrigins,
     credentials: true,
   })
 );
