@@ -1,5 +1,5 @@
-import { useState } from "react";
-import API from "../services/api";   // ✅ use shared API instance
+import { useState, useEffect, useRef } from "react";
+import API from "../services/api";
 import { FaRobot, FaUser, FaPaperPlane } from "react-icons/fa";
 
 const AIChat = () => {
@@ -11,6 +11,21 @@ const AIChat = () => {
   ]);
 
   const [input, setInput] = useState("");
+
+  // Reference to the chat messages container
+  const chatContainerRef = useRef(null);
+
+  // Automatically scroll ONLY the chat box to the bottom
+  useEffect(() => {
+    const container = chatContainerRef.current;
+
+    if (container) {
+      container.scrollTo({
+        top: container.scrollHeight,
+        behavior: "smooth",
+      });
+    }
+  }, [messages]);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -35,34 +50,38 @@ const AIChat = () => {
         },
       ]);
 
-      // ✅ Use API instance instead of axios + localhost
-      const res = await API.post("/ai/chat", { message: question });
+      const res = await API.post("/ai/chat", {
+        message: question,
+      });
 
       const aiReply = res.data.response;
 
       setMessages((prev) => {
         const updated = [...prev];
-        // Replace Thinking...
+
+        // Replace "Thinking..." with AI response
         updated[updated.length - 1] = {
           sender: "bot",
           text: aiReply,
         };
+
         return updated;
       });
     } catch (error) {
       setMessages((prev) => {
         const updated = [...prev];
+
         updated[updated.length - 1] = {
           sender: "bot",
           text: "Sorry, I couldn't connect to the AI server.",
         };
+
         return updated;
       });
+
       console.error(error);
     }
   };
-
-  
 
   return (
     <div className="max-auto mx-auto bg-white shadow-xl rounded-2xl overflow-hidden">
@@ -70,15 +89,23 @@ const AIChat = () => {
       {/* Header */}
       <div className="bg-red-600 text-white p-4! flex items-center gap-5 AI-header">
         <FaRobot className="text-3xl" />
+
         <div>
-          <h2 className="text-xl font-bold">LifeLine AI Assistant</h2>
-          <p className="text-sm">Ask about emergencies & first aid</p>
+          <h2 className="text-xl font-bold">
+            LifeLine AI Assistant
+          </h2>
+
+          <p className="text-sm">
+            Ask about emergencies & first aid
+          </p>
         </div>
       </div>
 
       {/* Chat Messages */}
-      <div className="h-112.5 overflow-y-auto p-5! bg-gray-100 space-y-4">
-
+      <div
+        ref={chatContainerRef}
+        className="h-112.5 overflow-y-auto p-5! bg-gray-100 space-y-4"
+      >
         {messages.map((msg, index) => (
           <div
             key={index}
@@ -95,6 +122,7 @@ const AIChat = () => {
                   : ""
               }`}
             >
+              {/* Icon */}
               <div className="text-2xl mt-1!">
                 {msg.sender === "user" ? (
                   <FaUser className="text-blue-600" />
@@ -103,6 +131,7 @@ const AIChat = () => {
                 )}
               </div>
 
+              {/* Message */}
               <div
                 className={`p-3 rounded-xl ${
                   msg.sender === "user"
@@ -115,7 +144,6 @@ const AIChat = () => {
             </div>
           </div>
         ))}
-
       </div>
 
       {/* Input Area */}
@@ -138,7 +166,7 @@ const AIChat = () => {
           onClick={sendMessage}
           className="ml-3! bg-red-600 hover:bg-red-700 text-white px-5! rounded-lg flex items-center justify-center"
         >
-          <FaPaperPlane className="paperPlane"/>
+          <FaPaperPlane className="paperPlane" />
         </button>
 
       </div>
