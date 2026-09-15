@@ -54,48 +54,46 @@ The frontend is designed to provide a responsive experience across different scr
 
 ### Frontend
 
-* React.js
-* Vite
-* JavaScript
-* HTML5
-* CSS3
-* Tailwind CSS
-* React Router
-* Redux Toolkit
-* Axios
-* Framer Motion
-* React Icons
+- React.js
+- Vite
+- JavaScript
+- HTML5
+- CSS3
+- Tailwind CSS
+- React Router
+- Redux Toolkit
+- Axios
+- Framer Motion
+- React Icons
 
 ### Backend
 
-* Node.js
-* Express.js
-* REST APIs
-* Socket.IO
+- Node.js
+- Express.js
+- REST APIs
 
 ### Database
 
-* MongoDB
-* Mongoose
+- MongoDB
+- Mongoose
 
 ### AI & External Services
 
-* Google Gemini API
-* Google Maps API
-* Firebase
-* Cloudinary
+- Google Maps API
+- Firebase
+- Cloudinary
 
 ### Authentication & Security
 
-* JSON Web Tokens (JWT)
-* bcrypt.js
+- JSON Web Tokens (JWT)
+- bcrypt.js
 
 ### Development & Deployment
 
-* Git
-* GitHub
-* VS Code
-* Vercel
+- Git
+- GitHub
+- VS Code
+- Vercel
 
 ---
 
@@ -335,14 +333,14 @@ Dashboard
 
 The main objectives of LifeLine-AI are:
 
-* Provide quick access to emergency healthcare resources.
-* Make nearby hospitals easier to discover.
-* Help users find suitable blood donors.
-* Provide preliminary AI-based healthcare guidance.
-* Enable location-based healthcare services.
-* Provide real-time communication capabilities.
-* Bring multiple emergency services into one platform.
-* Create a scalable foundation for future healthcare features.
+- Provide quick access to emergency healthcare resources.
+- Make nearby hospitals easier to discover.
+- Help users find suitable blood donors.
+- Provide preliminary AI-based healthcare guidance.
+- Enable location-based healthcare services.
+- Provide real-time communication capabilities.
+- Bring multiple emergency services into one platform.
+- Create a scalable foundation for future healthcare features.
 
 ---
 
@@ -368,16 +366,16 @@ LifeLine-AI aims to improve the accessibility and efficiency of emergency health
 
 ## 🗺️ Future Roadmap
 
-* [ ] Advanced emergency notifications
-* [ ] Improved hospital availability information
-* [ ] Enhanced AI healthcare assistant
-* [ ] Ambulance assistance and tracking
-* [ ] Doctor consultation integration
-* [ ] Mobile application
-* [ ] Advanced emergency analytics
-* [ ] Healthcare organization integration
-* [ ] Multilingual support
-* [ ] Improved real-time emergency coordination
+- [ ] Advanced emergency notifications
+- [ ] Improved hospital availability information
+- [ ] Enhanced AI healthcare assistant
+- [ ] Ambulance assistance and tracking
+- [ ] Doctor consultation integration
+- [ ] Mobile application
+- [ ] Advanced emergency analytics
+- [ ] Healthcare organization integration
+- [ ] Multilingual support
+- [ ] Improved real-time emergency coordination
 
 ---
 
@@ -385,14 +383,14 @@ LifeLine-AI aims to improve the accessibility and efficiency of emergency health
 
 LifeLine-AI follows basic security practices including:
 
-* JWT-based authentication
-* Password hashing using bcrypt.js
-* Protected API routes
-* Environment variables for sensitive credentials
-* Backend validation
-* Authentication middleware
-* CORS configuration
-* Separation of frontend and backend services
+- JWT-based authentication
+- Password hashing using bcrypt.js
+- Protected API routes
+- Environment variables for sensitive credentials
+- Backend validation
+- Authentication middleware
+- CORS configuration
+- Separation of frontend and backend services
 
 ---
 
@@ -400,54 +398,17 @@ LifeLine-AI follows basic security practices including:
 
 The application should be tested across:
 
-* Authentication and authorization
-* Emergency reporting
-* Hospital search
-* Blood donor search
-* AI assistant
-* API communication
-* Database operations
-* Real-time communication
-* Location services
-* Responsive UI
-* Error handling
-
----
-
-## 📸 Screenshots
-
-Add your project screenshots here to showcase the interface.
-
-```text
-screenshots/
-├── home.png
-├── login.png
-├── register.png
-├── dashboard.png
-├── hospitals.png
-├── blood-donors.png
-├── emergency.png
-├── ai-assistant.png
-└── profile.png
-```
-
-Example:
-
-```markdown
-## 📸 Screenshots
-
-### Home Page
-
-![Home Page](screenshots/home.png)
-
-### Dashboard
-
-![Dashboard](screenshots/dashboard.png)
-
-### Emergency Reporting
-
-![Emergency Reporting](screenshots/emergency.png)
-```
+- Authentication and authorization
+- Emergency reporting
+- Hospital search
+- Blood donor search
+- AI assistant
+- API communication
+- Database operations
+- Real-time communication
+- Location services
+- Responsive UI
+- Error handling
 
 ---
 
@@ -458,7 +419,6 @@ https://lifeline-ai-by-lovesh.vercel.app/
 
 **GitHub Repository:**
 https://github.com/lovesh-semwal/Lifeline-AI/
-
 
 ---
 
@@ -474,16 +434,16 @@ LifeLine-AI was developed as a **full-stack hackathon project** with the goal of
 
 ## 🏆 Project Highlights
 
-* Full-stack web application
-* AI integration
-* REST API architecture
-* MongoDB database
-* JWT authentication
-* Real-time communication
-* Location-based services
-* Responsive UI
-* Modular frontend and backend architecture
-* Cloud/API integrations
+- Full-stack web application
+- AI integration
+- REST API architecture
+- MongoDB database
+- JWT authentication
+- Real-time communication
+- Location-based services
+- Responsive UI
+- Modular frontend and backend architecture
+- Cloud/API integrations
 
 ---
 
