@@ -307,44 +307,48 @@ const ReportEmergency = () => {
           {/* Upload Image */}
 
           <div>
-            <label className="block text-lg font-semibold text-gray-700 mb-3!">
-              Upload Incident Image
-            </label>
+  <label className="block text-lg font-semibold text-gray-700 mb-3!">
+    Upload Incident Image
+  </label>
 
-            <div className="border-2 border-dashed border-red-300 rounded-2xl p-8! text-center hover:border-red-500 hover:bg-red-50 transition-all duration-300">
+  <label
+    htmlFor="incident-image"
+    className="block border-2 border-dashed border-red-300 rounded-2xl p-8! text-center cursor-pointer hover:border-red-500 hover:bg-red-50 transition-all duration-300"
+  >
+    <FaCamera className="mx-auto text-6xl text-red-500 mb-5!" />
 
-              <FaCamera className="mx-auto text-6xl text-red-500 mb-5!" />
+    <div className="text-gray-600 font-medium">
+      Choose File
+    </div>
 
-              <input
-                type="file"
-                name="image"
-                accept="image/*"
-                onChange={handleChange}
-                className="block mx-auto text-gray-600"
-              />
+    <p className="text-sm text-gray-500 mt-3!">
+      JPG, PNG or JPEG (Max 5MB)
+    </p>
 
-              <p className="text-sm text-gray-500 mt-3!">
-                JPG, PNG or JPEG (Max 5MB)
-              </p>
+    <input
+      id="incident-image"
+      type="file"
+      name="image"
+      accept="image/png, image/jpeg, image/jpg"
+      onChange={handleChange}
+      className="hidden"
+    />
 
-              {formData.image && (
-                <div className="mt-8">
+    {formData.image && (
+      <div className="mt-8">
+        <img
+          src={URL.createObjectURL(formData.image)}
+          alt="Preview"
+          className="w-full max-w-sm mx-auto h-60 object-cover rounded-2xl shadow-lg border"
+        />
 
-                  <img
-                    src={URL.createObjectURL(formData.image)}
-                    alt="Preview"
-                    className="w-full max-w-sm mx-auto h-60 object-cover rounded-2xl shadow-lg border"
-                  />
-
-                  <p className="mt-4 text-green-600 font-semibold">
-                    ✓ Image Selected Successfully
-                  </p>
-
-                </div>
-              )}
-
-            </div>
-          </div>
+        <p className="mt-4 text-green-600 font-semibold">
+          ✓ Image Selected Successfully
+        </p>
+      </div>
+    )}
+  </label>
+</div>
 
           {/* Submit Button */}
 
